@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="../css/materialize.min.css" media="screen,projection" />
+  <link rel="stylesheet" href="../css/master.css">
+  <title>Database</title>
+
+</head>
+
+<body>
+  <!-- Top Navbar -->
+  <div class="nav-wrapper">
+    <ul id="account" class="dropdown-content">
+      <li><a href="#!"><i class="material-icons left">account_circle</i>Account</a></li>
+      <li class="divider"></li>
+      <li><a href="../index.html">Log-out</a></li>
+    </ul>
+    <nav>
+      <ul class="right hide-on-med-and-down">
+        <li>Total Earned Today : $0.00 </li>
+        <li><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i></li>
+        <li><a class="dropdown-button" href="#!" data-activates="account"><i class="material-icons left">account_circle</i>&nbsp;<i class="material-icons left">arrow_drop_down</i></a></li>
+      </ul>
+  </nav>
+</div>
+  <ul id="slide-out" class="side-nav fixed">
+    <li class="brand"><a class="waves-effect" href="#!">Inventory Management System</a></li>
+      <li><div class="user-view">
+        <div class="background">
+
+        </div>
+        <a href="#!user"><img class="circle" src="../assets/profile/admin.jpg"></a>
+        <a href="#!name"><span class="white-text name">MufasaOnAcid</span></a>
+        <a href="#!email"><span class="white-text email">mustafaadam1902@gmail.com</span></a>
+      </div></li>
+      <li><a class="waves-effect" href="home.html"><i class="material-icons">home</i>Dashboard</a></li>
+      <li><a class="waves-effect" href="transactions.html"><i class="material-icons">swap_horiz</i>Transactions</a></li>
+      <li><a class="waves-effect" href="items.html"><i class="material-icons">shopping_cart</i>Inventory Items</a></li>
+      <li><div class="divider"></div></li>
+      <ul class="collapsible collapsible-accordion">
+        <li>
+          <a class="collapsible-header waves-effect active">Options<i class="material-icons">settings</i><i class="material-icons a right ">arrow_drop_down</i></a>
+          <div class="collapsible-body">
+            <ul class="menu-drpdn">
+              <li class="active"><a class="waves-effect" href="dbmanage.html"><i class="material-icons">layers</i>Database Management</a></li>
+              <li><a class="waves-effect" href="user_manage.html"><i class="material-icons">account_circle</i>Admin Management</a></li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </ul>
+    <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+    <div class="workspace">
+      <div class="row center">
+        <div class="col l6">
+          <a class="waves-effect waves-light btn green"><i class="material-icons left">get_app</i>Download Data</a>
+        </div>
+        <div class="col l6">
+          <a class="waves-effect waves-light btn blue"><i class="material-icons left">file_upload</i>Import Data</a>
+          <label for="">File type must be SQL</label>
+        </div>
+      </div>
+      <div class="copyrights">
+        &copy;&nbsp;Copyright&nbsp; <i class="team">M.O.A</i>&nbsp; (2017)
+      </div>
+    </div>
+  <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="../js/materialize.min.js"></script>
+  <script type="text/javascript" src="../js/new$.js"></script>
+</body>
+
+</html>

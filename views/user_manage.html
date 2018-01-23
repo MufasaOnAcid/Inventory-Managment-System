@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="../css/materialize.min.css" media="screen,projection" />
+  <link rel="stylesheet" href="../css/master.css">
+  <title>Adminstrators</title>
+
+</head>
+
+<body>
+  <!-- Top Navbar -->
+  <div class="nav-wrapper">
+    <ul id="account" class="dropdown-content">
+      <li><a href="#!"><i class="material-icons left">account_circle</i>Account</a></li>
+      <li class="divider"></li>
+      <li><a href="../index.html">Log-out</a></li>
+    </ul>
+    <nav>
+      <ul class="right hide-on-med-and-down">
+        <li>Total Earned Today : $0.00 </li>
+        <li><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i></li>
+        <li><a class="dropdown-button" href="#!" data-activates="account"><i class="material-icons left">account_circle</i>&nbsp;<i class="material-icons left">arrow_drop_down</i></a></li>
+      </ul>
+    </nav>
+  </div>
+  <ul id="slide-out" class="side-nav fixed">
+    <li class="brand"><a class="waves-effect" href="#!">Inventory Management System</a></li>
+    <li>
+      <div class="user-view">
+        <div class="background">
+
+        </div>
+        <a href="#!user"><img class="circle" src="../assets/profile/admin.jpg"></a>
+        <a href="#!name"><span class="white-text name">MufasaOnAcid</span></a>
+        <a href="#!email"><span class="white-text email">mustafaadam1902@gmail.com</span></a>
+      </div>
+    </li>
+    <li><a class="waves-effect" href="home.html"><i class="material-icons">home</i>Dashboard</a></li>
+    <li><a class="waves-effect" href="transactions.html"><i class="material-icons">swap_horiz</i>Transactions</a></li>
+    <li><a class="waves-effect" href="items.html"><i class="material-icons">shopping_cart</i>Inventory Items</a></li>
+    <li>
+      <div class="divider"></div>
+    </li>
+    <ul class="collapsible collapsible-accordion">
+      <li>
+        <a class="collapsible-header waves-effect active">Options<i class="material-icons">settings</i><i class="material-icons a right ">arrow_drop_down</i></a>
+        <div class="collapsible-body">
+          <ul class="menu-drpdn">
+            <li><a class="waves-effect" href="dbmanage.html"><i class="material-icons">layers</i>Database Management</a></li>
+            <li class="active"><a class="waves-effect" href="user_manage.html"><i class="material-icons">account_circle</i>Admin Management</a></li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </ul>
+  <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+  <div class="workspace">
+    <div class="row">
+      <div class="col l12">
+        <div class="col s3">
+          <!-- Modal Trigger -->
+          <a class="waves-effect waves-light btn modal-trigger" href="#addAdmin"><i class="material-icons left">person_add</i>New Admin</a>
+
+        </div>
+        <div class="input-field col s3">
+          <select>
+              <option value="1">1</option>
+              <option value="5">5</option>
+              <option value="10" selected>10</option>
+              <option value="15">15</option>
+              <option value="20">20</option>
+              <option value="20">20</option>
+              <option value="30">30</option>
+              <option value="50">50</option>
+              <option value="100">100</option>
+            </select>
+          <label>Show Per Page</label>
+        </div>
+        <div class="col s3 input-field">
+          <select>
+            <option value="first_name-ASC" selected>Name (A to Z)</option>
+            <option value="first_name-DESC">Name (Z to A)</option>
+            <option value="created_on-ASC">Date Created (older first)</option>
+            <option value="created_on-DESC">Date Created (recent first)</option>
+            <option value="email-ASC">E-mail - ascending</option>
+            <option value="email-DESC">E-mail - descending</option>
+          </select>
+          <label for="transListSortBy">Sort by</label>
+        </div>
+
+        <div class="input-field col s3">
+          <i class="material-icons prefix">search</i>
+          <input type="search" id="transSearch" />
+          <label for='transSearch'>Search...</label>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="col s12 center">
+      <h4>Administrator List</h4>
+    </div>
+    <div class="row col s12">
+      <table class="highlight responsive-table centered" style="border:1px solid #26a69a">
+        <thead class="transrepo">
+          <tr>
+            <th>SN</th>
+            <th>NAME</th>
+            <th>E-MAIL</th>
+            <th>MOBILE</th>
+            <th>WORK</th>
+            <th>ROLE</th>
+            <th>DATE CREATED</th>
+            <th>LAST LOG IN</th>
+            <th>EDIT</th>
+            <th>ACCOUNT STATUS</th>
+            <th>DELETE</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>1.</td>
+            <td>MufasaOnAcid Adam</td>
+            <td>mustafaadam1902@gmail.com</td>
+            <td>+249913551079</td>
+            <td> - </td>
+            <td>Super</td>
+            <td>30th Oct, 2017 10:35:50pm</td>
+            <td>1st Nov, 2017 10:42:02am</td>
+            <td><a href="#editAdmin" class="modal-trigger"><i class="material-icons" style="color:blue">mode_edit</i></a></td>
+            <td>
+              <div class="switch">
+                <label>
+                  <input type="checkbox">
+                  <span class="lever"></span>
+                </label>
+              </div>
+            </td>
+            <td><a href="#"><i class="material-icons" style="color:red">delete</i></a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="copyrights">
+      &copy;&nbsp;Copyright&nbsp; <i class="team">M.O.A</i>&nbsp; (2017)
+  </div>
+  </div>
+
+  <!-- Add Admin Modal Structure -->
+  <div id="addAdmin" class="modal modal-fixed-footer">
+    <form class="col s12">
+      <div class="modal-content">
+        <h4 class="center sm">Add New Admin</h4>
+        <hr>
+        <div class="row">
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="first_name" type="text" class="validate" required>
+              <label for="first_name">First Name</label>
+            </div>
+            <div class="input-field col s6">
+              <input id="last_name" type="text" class="validate" required>
+              <label for="last_name">Last Name</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="email" type="email" class="validate" required>
+              <label for="email">Email</label>
+            </div>
+            <div class="input-field col s6">
+              <select required>
+                <option value="" selected>Role</option>
+                <option value="super">Super</option>
+                <option value="basic">Basic</option>
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="phone_number" type="text" required>
+              <label for="phone_number">Phone Number</label>
+            </div>
+            <div class="input-field col s6">
+              <input id="phone_number2" type="text">
+              <label for="phone_number2" data-error="wrong" data-success="right">Other Number (optional)</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="password" type="password" class="validate" required>
+              <label for="password">Password</label>
+            </div>
+            <div class="input-field col s6">
+              <input id="confirm_password" type="password" class="validate" required>
+              <label for="confirm_password">Confirm Password</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <div class="row col s12">
+          <div class="col s2">
+            <button class="btn waves-effect orange" type="reset" name="button">Reset</button>
+          </div>
+          <div class="col s4">
+
+          </div>
+          <div class="col s6">
+            <a href="#" class="modal-action waves-effect waves-ripple btn green">Save</a>
+            <a href="#!" class="modal-action modal-close waves-effect waves-red btn red ">Cancel</a>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <!-- Edit Admin Modal Structure -->
+  <div id="editAdmin" class="modal modal-fixed-footer">
+    <form class="col s12">
+      <div class="modal-content">
+        <h4 class="center sm">Add New Admin</h4>
+        <hr>
+        <div class="row">
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="first_name" type="text" class="validate" required>
+              <label for="first_name">First Name</label>
+            </div>
+            <div class="input-field col s6">
+              <input id="last_name" type="text" class="validate" required>
+              <label for="last_name">Last Name</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="email" type="email" class="validate" required>
+              <label for="email">Email</label>
+            </div>
+            <div class="input-field col s6">
+              <select required>
+                <option value="" selected>Role</option>
+                <option value="super">Super</option>
+                <option value="basic">Basic</option>
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="phone_number" type="text" required>
+              <label for="phone_number">Phone Number</label>
+            </div>
+            <div class="input-field col s6">
+              <input id="phone_number2" type="text">
+              <label for="phone_number2" data-error="wrong" data-success="right">Other Number (optional)</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <div class="row col s12">
+          <div class="col s2">
+            <button class="btn waves-effect orange" type="reset" name="button">Reset</button>
+          </div>
+          <div class="col s4">
+
+          </div>
+          <div class="col s6">
+            <a href="#" class="modal-action waves-effect waves-ripple btn green">Update</a>
+            <a href="#!" class="modal-action modal-close waves-effect waves-red btn red ">Cancel</a>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+
+
+  <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="../js/materialize.min.js"></script>
+  <script type="text/javascript" src="../js/new$.js"></script>
+</body>
+
+</html>

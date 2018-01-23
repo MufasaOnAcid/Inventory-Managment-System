@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="../css/materialize.min.css" media="screen,projection" />
+  <link rel="stylesheet" href="../css/master.css">
+  <title>Transactions</title>
+
+</head>
+
+<body>
+  <!-- Top Navbar -->
+  <div class="nav-wrapper">
+    <ul id="account" class="dropdown-content">
+      <li><a href="#!"><i class="material-icons left">account_circle</i>Account</a></li>
+      <li class="divider"></li>
+      <li><a href="../index.html">Log-out</a></li>
+    </ul>
+    <nav>
+      <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="right">
+        <li>Total Earned Today : $0.00 </li>
+        <li><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i></li>
+        <li><a class="dropdown-button" href="#!" data-activates="account"><i class="material-icons left">account_circle</i>&nbsp;<i class="material-icons left">arrow_drop_down</i></a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Side Nav -->
+  <ul id="slide-out" class="side-nav fixed">
+    <li class="brand"><a class="waves-effect" href="#!">Inventory Management System</a></li>
+    <li>
+      <div class="user-view">
+        <div class="background">
+
+        </div>
+        <a href="#!user"><img class="circle" src="../assets/profile/admin.jpg"></a>
+        <a href="#!name"><span class="white-text name">MufasaOnAcid</span></a>
+        <a href="#!email"><span class="white-text email">mustafaadam1902@gmail.com</span></a>
+      </div>
+    </li>
+    <li><a class="waves-effect" href="home.html"><i class="material-icons">home</i>Dashboard</a></li>
+    <li class="active"><a class="waves-effect" href="transactions.html"><i class="material-icons">swap_horiz</i>Transactions</a></li>
+    <li><a class="waves-effect" href="items.html"><i class="material-icons">shopping_cart</i>Inventory Items</a></li>
+    <li>
+      <div class="divider"></div>
+    </li>
+    <ul class="collapsible collapsible-accordion">
+      <li>
+        <a class="collapsible-header">Options<i class="material-icons">settings</i><i class="material-icons a right ">arrow_drop_down</i></a>
+        <div class="collapsible-body">
+          <ul class="menu-drpdn">
+            <li><a class="waves-effect" href="dbmanage.html"><i class="material-icons">layers</i>Database Management</a></li>
+            <li><a class="waves-effect" href="user_manage.html"><i class="material-icons">account_circle</i>Admin Management</a></li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </ul>
+
+
+  <div class="workspace">
+    <!-- Modal Structure -->
+    <div id="report" class="modal modal-fixed-footer">
+      <div class="modal-content" style="text-align:center">
+        <h4>Generate Report</h4>
+        <hr>
+        <div class="row">
+          <div class="input-field col s6">
+            <input id="date_from" type="text" class="datepicker" required>
+            <label for="date_from" data-error="wrong" data-success="right">From Date</label>
+          </div>
+          <div class="input-field col s6">
+            <input id="date_to" type="text" class="datepicker" required>
+            <label for="date_to" data-error="wrong" data-success="right">To Date</label>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a href="#" class="modal-action waves-effect waves-ripple btn green">Generate</a>
+        <a href="#!" class="modal-action modal-close waves-effect waves-red btn red ">Close</a>
+      </div>
+    </div>
+
+    <!-- New Transactions Form / Parent Accordion -->
+
+    <ul id="newTransaction" l class="collapsible col s10" data-collapsible="accordion">
+      <li>
+        <a href="#">
+      </a>
+      </li>
+      <li>
+        <div class="collapsible-header">
+          <div class="col s4">
+            <center>
+              <a href="#!" class="btn">New Transaction</a>
+            </center>
+          </div>
+
+          <div class="col s4">
+            <!-- Space -->
+          </div>
+        </div>
+        <div class="row collapsible-body light-green lighten-5">
+          <form class="col l12" action="" method="post">
+
+            <!-- New Item Form / Child Accrodion with the Parent Accordion -->
+
+            <ul class="collapsible" data-collapsible="accordion">
+              <li>
+
+                <div class="row collapsible-body green lighten-5">
+                    <div class="col s3">
+                      <div class="input-field inline" >
+                        <select>
+                          <option value="" selected disabled>Selet Item</option>
+                          <option value="item">Item 1</option>
+                          <option value="item">Item 2</option>
+                        </select>
+                        <label>Item</label>
+                      </div>
+                    </div>
+                    <div class="col s3">
+                      <div class="input-field inline">
+                        <input type="number" id="avail_quant" readonly>
+                        <label for="avail_quant" data-error="wrong" data-success="right">Available Quantity</label>
+                      </div>
+                    </div>
+                    <div class="col s2">
+                      <div class="input-field inline">
+                        <input type="number" id="unit_price" readonly>
+                        <label for="unit_price" data-error="wrong" data-success="right">Unit Price</label>
+                      </div>
+                    </div>
+                    <div class="col s1">
+                      <div class="input-field inline">
+                        <input type="number" id="quantity" required>
+                        <label for="quantity" data-error="wrong" data-success="right">Quantity</label>
+                      </div>
+                    </div>
+                    <div class="col s2">
+                      <div class="input-field inline">
+                        <input type="number" id="total_price" readonly>
+                        <label for="total_price" data-error="wrong" data-success="right">Total Price</label>
+                      </div>
+                    </div>
+                    <div class="col s1">
+                      <a href="#"><i class="material-icons right">clear</i></a>
+                    </div>
+                </div>
+                <div class="collapsible-header">
+                  <div class="row col s12 ad_it">
+                    <a class="btn" href="#!"><i class="material-icons left">add</i>Add Item</a>
+                  </div>
+                </div>
+              </li>
+            </ul>
+
+            <!-- Add Item Accordion Ends here! -->
+
+            <!-- Transactions Form -->
+
+            <div class="row col s12">
+              <div class="input-field inline col s4">
+                <input id="VAT" type="number" name="" value="">
+                <label for="VAT" data-error="wrong" data-success="right">VAT(%)</label>
+              </div>
+              <div class="input-field inline col s4">
+                <input id="discount" type="number" name="" value="">
+                <label for="discount" data-error="wrong" data-success="right">Discount(%)</label>
+              </div>
+              <div class="input-field inline col s4">
+                <select required>
+              <option value="" disabled selected>Choose your option</option>
+              <option value="1">Cash</option>
+              <option value="2">POS</option>
+              <option value="3">Cash & POS</option>
+            </select>
+                <label>Method of Payment</label>
+              </div>
+            </div>
+
+            <div class="row col s12">
+              <div class="input-field inline col s4">
+                <input id="cum_amount" type="number" name="" value="" readonly>
+                <label for="cum_amount" data-error="wrong" data-success="right">Cummlative Amount</label>
+              </div>
+              <div class="input-field inline col s4">
+                <input id="amount_tendered" type="number" name="" value="" required>
+                <label for="amount_tendered" data-error="wrong" data-success="right">Amount Tendered</label>
+              </div>
+              <div class="input-field inline col s4">
+                <input id="change_due" type="number" name="" value="">
+                <label for="change_due" data-error="wrong" data-success="right">Change Due</label>
+              </div>
+            </div>
+
+            <div class="row col s12">
+              <div class="input-field inline col s4">
+                <input id="cus_name" type="text" name="" value="" required>
+                <label for="cus_name" data-error="wrong" data-success="right">Customer Name</label>
+              </div>
+              <div class="input-field inline col s4">
+                <input id="cuz_number" type="number" name="" value="" required>
+                <label for="cuz_number" data-error="wrong" data-success="right">Custmer Phone</label>
+              </div>
+              <div class="input-field inline col s4">
+                <input id="cus_email" type="email" name="" value="" class="validate" required>
+                <label for="cus_email" data-error="wrong" data-success="right">Customer Email</label>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col s5">
+                <!-- Space -->
+              </div>
+              <div class="input-field inline col s7">
+                <button class="btn waves-effect green" type="button" name="button">Confirm Order</button>
+                <button class="btn waves-effect orange" type="reset" name="button">Clear Order</button>
+                <button class="btn waves-effect red" type="button" name="button">Close</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </li>
+    </ul>
+    <!-- Parent Accordion Ends and Transactions Tabs aswell -->
+
+    <div class="row col s12">
+      <div class="col s12">
+        <div class="input-field col s4">
+          <select>
+            <option value="1">1</option>
+              <option value="5">5</option>
+              <option value="10" selected>10</option>
+              <option value="15">15</option>
+              <option value="20">20</option>
+              <option value="20">20</option>
+              <option value="30">30</option>
+              <option value="50">50</option>
+              <option value="100">100</option>
+          </select>
+          <label>Per Page</label>
+        </div>
+        <div class="input-field col s4">
+          <select>
+            <option value="transId-DESC">date(Latest First)</option>
+            <option value="transId-ASC">date(Oldest First)</option>
+            <option value="quantity-DESC">Quantity (Highest first)</option>
+            <option value="quantity-ASC">Quantity (Lowest first)</option>
+            <option value="totalPrice-DESC">Total Price (Highest first)</option>
+            <option value="totalPrice-ASC">Total Price (Lowest first)</option>
+            <option value="totalMoneySpent-DESC">Total Amount Spent (Highest first)</option>
+            <option value="totalMoneySpent-ASC">Total Amount Spent (Lowest first)</option>
+        </select>
+          <label for="transListSortBy">Sort by</label>
+        </div>
+
+        <div class="input-field col s4">
+          <i class="material-icons prefix">search</i>
+          <input type="search" id="transSearch" />
+          <label for='transSearch'>Search Transaction</label>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+    <div class="col l12 center">
+      <h4>Transactions</h4>
+    </div>
+    <div class="row col l12">
+      <table class="highlight responsive-table centered" style="border:1px solid #26a69a">
+        <thead class="transrepo">
+          <tr>
+            <th>SN</th>
+            <th>Receipt No</th>
+            <th>Total Items</th>
+            <th>Total Amount</th>
+            <th>Amount Tendered</th>
+            <th>Change Due</th>
+            <th>Mode of Payment</th>
+            <th>Staff</th>
+            <th>Customer</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>1.</td>
+            <td><a href="#">57419472</a></td>
+            <td>1380</td>
+            <td>$83,160.00</td>
+            <td>$83,200.00</td>
+            <td>$40.00</td>
+            <td>Cash and POS</td>
+            <td>Admin</td>
+            <td>Mohammed Al-Mustafa - 0913551079 - darkrampage16@gmail.com</td>
+            <td>30th Oct, 2017 10:31pm</td>
+          </tr>
+          <tr>
+            <td>2.</td>
+            <td><a href="#">689354</a></td>
+            <td>120</td>
+            <td>$8,750.00</td>
+            <td>$10,000.00</td>
+            <td>$1,250.00</td>
+            <td>Cash</td>
+            <td>Admin</td>
+            <td>Omer - 0123456789 - boss@email.com</td>
+            <td>29th Oct, 2017 10:38am</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="row col l12">
+      <div class="col s9">
+
+      </div>
+
+      <div class="col s3">
+        <center>
+          <!-- Modal Trigger -->
+          <a class="waves-effect waves-light btn modal-trigger" href="#report">Generate Report</a>
+        </center>
+      </div>
+    </div>
+    <div class="copyrights">
+      &copy;&nbsp;Copyright&nbsp; <i class="team">M.O.A</i>&nbsp; (2017)
+    </div>
+  </div>
+
+  <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="../js/materialize.min.js"></script>
+  <script type="text/javascript" src="../js/new$.js"></script>
+</body>
+
+</html>
